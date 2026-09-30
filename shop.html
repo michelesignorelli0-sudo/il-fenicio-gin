@@ -1,104 +1,70 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — Il Fenicio</title>
-  <meta name="description" content="Acquista Il Fenicio Gin. Spedizione in tutta Italia. Lotti artigianali limitati.">
-  <meta property="og:title" content="Shop — Il Fenicio">
-  <meta property="og:description" content="Acquista Il Fenicio Gin. Spedizione in tutta Italia.">
+  <title>In Arrivo — Il Fenicio Gin</title>
+  <meta name="description" content="Il Fenicio Gin sta arrivando. Iscriviti alla lista d'attesa per essere il primo a sapere quando puoi acquistarlo.">
+  <meta property="og:title" content="In Arrivo — Il Fenicio Gin">
+  <meta property="og:description" content="Il gin premium italiano che cambia colore. In arrivo presto.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ilfeniciogin.it/img/og-image.jpg">
   <meta name="theme-color" content="#070412">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍸</text></svg>">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Il Fenicio Gin 700 ml",
-    "image": "https://ilfeniciogin.it/img/og-image.jpg",
-    "description": "Gin premium artigianale italiano, 700 ml, 40% vol.",
-    "brand": { "@type": "Brand", "name": "Il Fenicio" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://ilfeniciogin.it/shop.html",
-      "priceCurrency": "EUR",
-      "price": "39.90",
-      "availability": "https://schema.org/PreOrder"
-    }
-  }
-  </script>
   <style>
-    /* ── SHOP HERO ── */
-    .shop-hero {
-      padding: 14rem 0 6rem;
+    /* ── COMING SOON HERO ── */
+    .cs-hero {
+      padding: 14rem 0 8rem;
       text-align: center;
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
-    .shop-hero::before {
+    .cs-hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(42,24,128,0.45) 0%, transparent 70%);
       pointer-events: none;
     }
-    .shop-hero-label {
+    .cs-eyebrow {
       font-size: 0.65rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .cs-hero h1 {
+      color: var(--white);
       margin-bottom: 1.2rem;
     }
-    .shop-hero h1 {
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-    .shop-hero p {
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.85rem;
+    .cs-hero-sub {
+      font-size: 0.9rem;
       color: var(--muted);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      max-width: 440px;
+      margin: 0 auto;
     }
 
-    /* ── TRUST RIBBON ── */
-    .trust-ribbon {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      padding: 1.2rem 2rem;
-      background: rgba(232,168,0,0.05);
-      border-bottom: 1px solid var(--border);
-      flex-wrap: wrap;
+    /* ── MAIN GRID ── */
+    .cs-main {
+      padding: 8rem 0;
     }
-    .trust-ribbon-item {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ── PRODUCT LAYOUT ── */
-    .shop-product {
-      padding: 7rem 0;
-    }
-    .shop-product-grid {
+    .cs-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
+      gap: 7rem;
+      align-items: center;
     }
 
-    /* ── PRODUCT IMAGE ── */
-    .product-img-wrap {
+    /* ── BOTTLE ── */
+    .cs-bottle-wrap {
       position: sticky;
       top: 8rem;
     }
-    .product-img-box {
+    .cs-bottle-box {
       background: rgba(42,24,128,0.08);
       border: 1px solid var(--border);
       border-radius: 4px;
@@ -108,27 +74,13 @@
       justify-content: center;
       overflow: hidden;
     }
-    .product-img-box img {
+    .cs-bottle-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 2.5rem;
     }
-    .product-img-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    .product-img-placeholder svg {
-      opacity: 0.15;
-    }
-    .product-img-placeholder span {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .img-note {
+    .cs-bottle-note {
       margin-top: 1rem;
       font-size: 0.65rem;
       color: var(--muted);
@@ -136,50 +88,50 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── PRODUCT INFO ── */
-    .product-label {
+    /* ── INFO PANEL ── */
+    .cs-label {
       font-size: 0.6rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 0.6rem;
     }
-    .product-name {
+    .cs-title {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-size: clamp(2.8rem, 4vw, 4.5rem);
       font-weight: 300;
       color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
+      line-height: 1.05;
+      margin-bottom: 1rem;
     }
-    .product-tagline {
-      font-size: 0.82rem;
+    .cs-desc {
+      font-size: 0.88rem;
       color: var(--muted);
-      font-style: italic;
-      margin-bottom: 2rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
 
-    /* ── SPECS MINI ── */
-    .specs-mini {
+    /* ── SPECS ── */
+    .cs-specs {
       display: flex;
       gap: 0;
       border: 1px solid var(--border);
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
-    .spec-mini {
+    .cs-spec {
       flex: 1;
       text-align: center;
       padding: 1rem 0.5rem;
       border-right: 1px solid var(--border);
     }
-    .spec-mini:last-child { border-right: none; }
-    .spec-mini-val {
+    .cs-spec:last-child { border-right: none; }
+    .cs-spec-val {
       font-family: var(--font-display);
       font-size: 1.4rem;
       color: var(--gold);
       display: block;
     }
-    .spec-mini-lbl {
+    .cs-spec-lbl {
       font-size: 0.55rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -188,90 +140,22 @@
       display: block;
     }
 
-    /* ── PRICE ── */
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 0.4rem;
-    }
-    .price-main {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--white);
-    }
-    .price-sub {
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-    .shipping-note {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-    }
-
-    /* ── QTY STEPPER ── */
-    .qty-label {
+    /* ── WAITLIST FORM ── */
+    .cs-form-title {
       font-size: 0.6rem;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-    .qty-stepper {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      width: fit-content;
-    }
-    .qty-stepper-btn {
-      width: 48px;
-      height: 48px;
-      background: transparent;
-      border: none;
       color: var(--gold);
-      font-size: 1.3rem;
-      font-family: var(--font-body);
-      cursor: pointer;
-      transition: background var(--ease);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
+      margin-bottom: 1rem;
     }
-    .qty-stepper-btn:hover {
-      background: rgba(232,168,0,0.08);
-    }
-    .qty-stepper-btn:disabled {
-      opacity: 0.3;
-      cursor: default;
-    }
-    .qty-stepper-val {
-      width: 64px;
-      text-align: center;
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--white);
-      border-left: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-      padding: 0.6rem 0;
-      user-select: none;
-    }
-    .qty-stepper-unit {
-      font-size: 0.55rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .cs-form-note {
+      font-size: 0.68rem;
       color: var(--muted);
-      display: block;
-      margin-top: 0.1rem;
+      line-height: 1.6;
+      margin: -0.4rem 0 1.2rem;
+      max-width: none;
     }
-
-    /* ── BUY BUTTON ── */
-    .btn-buy {
+    .btn-waitlist {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -288,132 +172,80 @@
       border: none;
       cursor: pointer;
       transition: all var(--ease);
-      text-decoration: none;
-      margin-bottom: 0.8rem;
     }
-    .btn-buy:hover {
+    .btn-waitlist:hover {
       background: var(--gold-light);
     }
-    .btn-wholesale {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 1rem 2rem;
-      background: transparent;
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      text-decoration: none;
-      transition: all var(--ease);
-      margin-bottom: 1.5rem;
-    }
-    .btn-wholesale:hover {
-      border-color: var(--gold);
+    .btn-waitlist:disabled {
+      opacity: 0.5;
+      cursor: default;
     }
 
-    /* ── STRIPE BADGE ── */
-    .stripe-badge {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.62rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 2rem;
-    }
-    .stripe-dot {
-      width: 8px;
-      height: 8px;
-      background: #635bff;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ── PRODUCT DESCRIPTION ── */
-    .product-desc p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-      max-width: none;
-    }
-    .product-desc-title {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-
-    /* ── TRUST BAR BOTTOM ── */
-    .trust-bar {
+    /* ── FEATURES STRIP ── */
+    .cs-features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .trust-item {
+    .cs-feature {
       padding: 2.5rem 2rem;
       text-align: center;
       border-right: 1px solid var(--border);
     }
-    .trust-item:last-child { border-right: none; }
-    .trust-item-icon {
-      font-size: 1.5rem;
+    .cs-feature:last-child { border-right: none; }
+    .cs-feature-icon {
+      font-size: 1.4rem;
       margin-bottom: 0.8rem;
     }
-    .trust-item-title {
+    .cs-feature-title {
       font-size: 0.7rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 0.4rem;
     }
-    .trust-item-sub {
+    .cs-feature-sub {
       font-size: 0.68rem;
       color: var(--muted);
     }
 
-    /* ── NAV BADGE ── */
-    .nav-shop-new {
-      font-size: 0.5rem;
-      background: var(--gold);
-      color: var(--deep);
-      padding: 0.15rem 0.4rem;
-      border-radius: 2px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      vertical-align: middle;
-      margin-left: 0.3rem;
+    /* ── SUCCESS STATE ── */
+    .cs-success {
+      display: none;
+      padding: 2rem;
+      border: 1px solid var(--gold);
+      background: rgba(232,168,0,0.06);
+      text-align: center;
+    }
+    .cs-success-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .cs-success-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .shop-product-grid {
+      .cs-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 4rem;
       }
-      .product-img-wrap {
+      .cs-bottle-wrap {
         position: static;
       }
-      .trust-bar {
+      .cs-features {
         grid-template-columns: 1fr;
       }
-      .trust-item {
+      .cs-feature {
         border-right: none;
         border-bottom: 1px solid var(--border);
       }
-      .trust-item:last-child { border-bottom: none; }
-      .trust-ribbon {
-        gap: 1rem;
-      }
+      .cs-feature:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -432,134 +264,100 @@
   </nav>
 
   <!-- HERO -->
-  <div class="shop-hero">
+  <div class="cs-hero">
     <div class="container">
-      <div class="shop-hero-label">◆ &nbsp; In arrivo &nbsp; ◆</div>
-      <h1>Il tuo <em style="color:var(--gold);font-style:italic">Fenicio</em>.<br>A casa tua.</h1>
-      <p>Spedizione in tutta Italia &nbsp;·&nbsp; Lotti artigianali limitati</p>
+      <div class="cs-eyebrow">◆ &nbsp; Lancio in preparazione &nbsp; ◆</div>
+      <h1>Sta <em style="color:var(--gold);font-style:italic">arrivando.</em></h1>
+      <p class="cs-hero-sub">Il gin premium italiano che cambia colore. Stiamo completando le ultime fasi prima del lancio.</p>
     </div>
   </div>
 
-
-  <!-- PRODUCT -->
-  <section class="shop-product">
+  <!-- MAIN -->
+  <section class="cs-main">
     <div class="container">
-      <div class="shop-product-grid">
+      <div class="cs-grid">
 
-        <!-- IMMAGINE -->
-        <div class="product-img-wrap reveal">
-          <div class="product-img-box">
-            <img src="img/bottiglia.webp" alt="Il Fenicio Gin — 700ml 40% vol" loading="lazy" style="object-fit:contain; padding:2rem;">
+        <!-- BOTTIGLIA -->
+        <div class="cs-bottle-wrap reveal">
+          <div class="cs-bottle-box">
+            <img src="img/bottiglia.webp" alt="Il Fenicio Gin — 700ml 40% vol" loading="lazy">
           </div>
-          <p class="img-note">700ml · Gin Premium · Made in Italy</p>
+          <p class="cs-bottle-note">700ml · Gin Premium · Made in Italy</p>
         </div>
 
-        <!-- INFO + ACQUISTO -->
+        <!-- INFO + FORM -->
         <div class="reveal delay-1">
-          <div class="product-label">Gin Premium · Made in Italy</div>
-          <div class="product-name">Il Fenicio<br>Gin</div>
-          <div class="product-tagline">Il più buono, il più coinvolgente, il più rappresentativo.</div>
+          <div class="cs-label">Gin Premium · Made in Italy</div>
+          <div class="cs-title">Il Fenicio<br>Gin</div>
+          <p class="cs-desc">Un gin artigianale italiano che cambia colore nel bicchiere. Botaniche selezionate dal Mediterraneo, lotti limitati, zero compromessi.<br><br>Stiamo completando le autorizzazioni e la prima produzione. Iscriviti alla lista d'attesa: sarai il primo a sapere quando sarà disponibile e avrai accesso prioritario al lancio.</p>
 
-          <div class="specs-mini">
-            <div class="spec-mini">
-              <span class="spec-mini-val">700</span>
-              <span class="spec-mini-lbl">ml</span>
+          <div class="cs-specs">
+            <div class="cs-spec">
+              <span class="cs-spec-val">700</span>
+              <span class="cs-spec-lbl">ml</span>
             </div>
-            <div class="spec-mini">
-              <span class="spec-mini-val">40%</span>
-              <span class="spec-mini-lbl">vol</span>
+            <div class="cs-spec">
+              <span class="cs-spec-val">40%</span>
+              <span class="cs-spec-lbl">vol</span>
             </div>
-            <div class="spec-mini">
-              <span class="spec-mini-val">100%</span>
-              <span class="spec-mini-lbl">artigianale</span>
+            <div class="cs-spec">
+              <span class="cs-spec-val">100%</span>
+              <span class="cs-spec-lbl">artigianale</span>
             </div>
-            <div class="spec-mini">
-              <span class="spec-mini-val">IT</span>
-              <span class="spec-mini-lbl">origine</span>
+            <div class="cs-spec">
+              <span class="cs-spec-val">IT</span>
+              <span class="cs-spec-lbl">origine</span>
             </div>
           </div>
 
-          <div class="price-row">
-            <div class="price-main" id="price-display">€ 39,90</div>
-            <div class="price-sub">IVA inclusa</div>
-          </div>
-
-          <!-- LISTA D'ATTESA — visibile finché SALES_OPEN = false -->
-          <div id="waitlist-block">
-            <div class="shipping-note" style="color:var(--gold)">◆ &nbsp;Vendite in apertura a breve</div>
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- FORM LISTA D'ATTESA -->
+          <div id="cs-form-wrap">
+            <div class="cs-form-title">◆ &nbsp; Avvisami al lancio</div>
+            <form id="cs-waitlist-form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="f5e52835-49c0-42bb-b066-ba8b397bc527">
               <input type="hidden" name="subject" value="Lista d'attesa — Il Fenicio Gin">
               <input type="checkbox" name="botcheck" style="display:none">
               <div class="form-group">
-                <label for="wl-email">Avvisami al lancio</label>
+                <label for="wl-email">La tua email</label>
                 <input type="email" id="wl-email" name="email" placeholder="la.tua@email.it" required>
               </div>
-              <p style="font-size:0.68rem;color:var(--muted);margin:-0.6rem 0 1.2rem;line-height:1.6;max-width:none">
-                Dichiaro di avere almeno 18 anni e accetto la <a href="privacy.html" style="color:var(--gold);text-decoration:underline">Privacy Policy</a>. Ti scriveremo solo per il lancio.
+              <p class="cs-form-note">
+                Iscrivendoti dichiari di avere almeno 18 anni e accetti la <a href="privacy.html" style="color:var(--gold);text-decoration:underline">Privacy Policy</a>. Ti scriveremo esclusivamente per il lancio. Niente spam.
               </p>
-              <button type="submit" class="btn-buy">Iscriviti alla lista d'attesa &nbsp;◆</button>
+              <button type="submit" class="btn-waitlist" id="cs-submit-btn">
+                Iscriviti alla lista d'attesa &nbsp;◆
+              </button>
             </form>
           </div>
 
-          <!-- ACQUISTO — visibile quando SALES_OPEN = true -->
-          <div id="buy-block" hidden>
-          <div class="shipping-note" id="shipping-note" style="color:var(--muted)">+ spedizione &nbsp;·&nbsp; gratuita da 3 bottiglie</div>
-
-          <div class="qty-label">Seleziona quantità</div>
-          <div class="qty-stepper">
-            <button class="qty-stepper-btn" id="qty-minus" onclick="changeQty(-1)" disabled>−</button>
-            <div class="qty-stepper-val">
-              <span id="qty-num">1</span>
-              <span class="qty-stepper-unit" id="qty-unit">bottiglia</span>
-            </div>
-            <button class="qty-stepper-btn" id="qty-plus" onclick="changeQty(1)">+</button>
+          <!-- STATO SUCCESSO -->
+          <div class="cs-success" id="cs-success">
+            <div class="cs-success-title">Sei dentro ◆</div>
+            <p class="cs-success-sub">Ti avviseremo non appena Il Fenicio sarà disponibile. Grazie per la fiducia.</p>
           </div>
 
-          <a href="https://buy.stripe.com/00w28s3D95cE6c5ao19ws00" id="buy-link" class="btn-buy" target="_blank" rel="noopener">
-            Acquista ora &nbsp;◆
-          </a>
-          <p style="font-size:0.68rem;color:var(--muted);text-align:center;margin:-0.4rem 0 1rem;line-height:1.6">
-            Cliccando "Acquista ora" accetti i nostri <a href="termini.html" style="color:var(--gold);text-decoration:underline">Termini e Condizioni</a> di vendita.<br>
-            Diritto di recesso 14 giorni · IVA 22% inclusa
-          </p>
-          <a href="contatti.html" class="btn-wholesale">
-            Ordini all'ingrosso → Contattaci
-          </a>
-
-          <div class="stripe-badge">
-            <div class="stripe-dot"></div>
-            Pagamento sicuro con Stripe &nbsp;·&nbsp; Visa · Mastercard · Apple Pay · Google Pay
-          </div>
-          </div>
-
-          <div class="product-desc">
-            <div class="product-desc-title">Il prodotto</div>
-            <p>Un gin artigianale italiano che cambia colore nel bicchiere. Botaniche selezionate, lotti limitati, zero compromessi.</p>
-            <p>Ogni bottiglia è il risultato di scelte precise — non di una catena di montaggio. Ci vuole tempo. E noi ce lo prendiamo.</p>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item reveal">
-      <div class="trust-item-icon">🇮🇹</div>
-      <div class="trust-item-title">Made in Italy</div>
-      <div class="trust-item-sub">Produzione artigianale italiana</div>
+  <!-- FEATURES STRIP -->
+  <div class="cs-features">
+    <div class="cs-feature reveal">
+      <div class="cs-feature-icon">🇮🇹</div>
+      <div class="cs-feature-title">Made in Italy</div>
+      <div class="cs-feature-sub">Produzione artigianale italiana</div>
     </div>
-    <div class="trust-item reveal delay-1">
-      <div class="trust-item-icon">📦</div>
-      <div class="trust-item-title">Spedizione rapida</div>
-      <div class="trust-item-sub">Consegna in 24/48 ore</div>
+    <div class="cs-feature reveal delay-1">
+      <div class="cs-feature-icon">◆</div>
+      <div class="cs-feature-title">Cambia colore</div>
+      <div class="cs-feature-sub">Reazione naturale alle botaniche</div>
     </div>
-    <div class="trust-item reveal delay-2">
-      <div class="trust-item-icon">🔒</div>
-      <div class="trust-item-title">Pagamento sicuro</div>
-      <div class="trust-item-sub">Checkout protetto da Stripe</div>
+    <div class="cs-feature reveal delay-2">
+      <div class="cs-feature-icon">📦</div>
+      <div class="cs-feature-title">Lotti limitati</div>
+      <div class="cs-feature-sub">Disponibilità riservata alla lista</div>
     </div>
   </div>
 
@@ -597,46 +395,46 @@
     </div>
   </footer>
 
+  <!-- AGE GATE -->
+  <div id="age-gate">
+    <div class="age-gate-logo">Il Fenicio <span>Gin Premium Italiano</span></div>
+    <div class="age-gate-divider"></div>
+    <p class="age-gate-title">Hai compiuto 18 anni?</p>
+    <p class="age-gate-sub">Per accedere devi essere maggiorenne</p>
+    <div class="age-gate-btns">
+      <button id="age-gate-yes" class="btn btn-gold">Si, ho 18 anni</button>
+      <button id="age-gate-no" class="btn">No, esci</button>
+    </div>
+    <p class="age-gate-legal">Entrando dichiari di avere almeno 18 anni e di accettare i termini di utilizzo. L'abuso di alcol è dannoso per la salute.</p>
+  </div>
+
   <script src="js/main.js"></script>
   <script>
-    // Mettere a true solo quando licenze/accise sono a posto e i link Stripe sono riattivati
-    var SALES_OPEN = false;
-    document.getElementById('buy-block').hidden = !SALES_OPEN;
-    document.getElementById('waitlist-block').hidden = SALES_OPEN;
-
-    var PRICE_UNIT = 39.90;
-    var STRIPE_LINKS = {
-      1: 'https://buy.stripe.com/00w28s3D95cE6c5ao19ws00',
-      2: 'https://buy.stripe.com/bJebJ28Xt20s2ZTdAd9ws01',
-      3: 'https://buy.stripe.com/00w3cw2z59sU9oh0Nr9ws02',
-      4: 'https://buy.stripe.com/5kQeVe0qXawY6c52Vz9ws03',
-      5: 'https://buy.stripe.com/7sY7sM0qX34w9oh1Rv9ws04',
-      6: 'https://buy.stripe.com/6oU7sM5Lh5cEfMF9jX9ws05'
-    };
-    var qty = 1;
-    var MAX_QTY = 6;
-
-    function changeQty(delta) {
-      qty = Math.min(MAX_QTY, Math.max(1, qty + delta));
-      document.getElementById('qty-num').textContent = qty;
-      document.getElementById('qty-unit').textContent = qty === 1 ? 'bottiglia' : 'bottiglie';
-      document.getElementById('qty-minus').disabled = qty <= 1;
-      document.getElementById('qty-plus').disabled = qty >= MAX_QTY;
-
-      var total = PRICE_UNIT * qty;
-      document.getElementById('price-display').textContent = '€ ' + total.toFixed(2).replace('.', ',');
-
-      document.getElementById('buy-link').href = STRIPE_LINKS[qty];
-
-      var note = document.getElementById('shipping-note');
-      if (qty >= 3) {
-        note.textContent = '✓  Spedizione gratuita inclusa';
-        note.style.color = '#5faa80';
-      } else {
-        note.innerHTML = '+ spedizione &nbsp;&middot;&nbsp; gratuita da 3 bottiglie';
-        note.style.color = 'var(--muted)';
-      }
-    }
+    (function(){
+      var form = document.getElementById('cs-waitlist-form');
+      if(!form) return;
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        var btn = document.getElementById('cs-submit-btn');
+        btn.textContent = 'Iscrizione in corso...';
+        btn.disabled = true;
+        var data = new FormData(form);
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body:data});
+          var json = await res.json();
+          if(json.success){
+            document.getElementById('cs-form-wrap').style.display = 'none';
+            document.getElementById('cs-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Errore, riprova';
+            btn.disabled = false;
+          }
+        } catch(err) {
+          btn.textContent = 'Errore, riprova';
+          btn.disabled = false;
+        }
+      });
+    })();
   </script>
 
   <!-- COOKIE BANNER -->
