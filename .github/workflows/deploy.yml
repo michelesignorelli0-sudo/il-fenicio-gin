@@ -10,22 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Debug FTP - lista directory radice
-        run: |
-          echo "=== FTP ROOT ==="
-          curl -s --list-only --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/" 2>&1 || true
-          echo "=== /public_html/ ==="
-          curl -s --list-only --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/public_html/" 2>&1 || true
-          echo "=== /htdocs/ ==="
-          curl -s --list-only --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_SERVER }}/htdocs/" 2>&1 || true
-
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
+          server-dir: /domains/ilfeniciogin.it/public_html/
           dangerous-clean-slate: true
           log-level: verbose
           exclude: |
