@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Il Fenicio</title>
+  <meta name="description" content="Contatta Il Fenicio Gin. Siamo disponibili per rivenditori, bartender e appassionati.">
+  <meta property="og:title" content="Contatti — Il Fenicio">
+  <meta property="og:description" content="Scrivici per informazioni su Il Fenicio Gin. Disponibili per rivenditori, bartender e appassionati.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ilfeniciogin.it/img/og-image.jpg">
+  <meta name="theme-color" content="#070412">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍸</text></svg>">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Il Fenicio <span>Established 2026</span></a>
+    <button class="nav-toggle" aria-label="Apri menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="il-gin.html">Il Fenicio</a></li>
+      <li><a href="perche-noi.html">Perché Noi</a></li>
+      <li><a href="shop.html" class="nav-shop">Shop</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container page-hero-content">
+      <span class="section-label">Scrivici</span>
+      <h1>Con<em style="color:var(--gold);font-style:italic">tatti</em></h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- INFO -->
+        <div class="contact-info reveal">
+          <h2 style="color:var(--white); font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; margin-bottom:2.5rem">Don't Waste<br><em style="color:var(--gold)">Your Time.</em></h2>
+
+          <div class="contact-detail">
+            <div class="contact-detail-label">Email</div>
+            <p>ilfeniciogin@gmail.com</p>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-label">Sede</div>
+            <p>Bergamo</p>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-label">Orari</div>
+            <p>Lun – Ven &nbsp; 9:00 – 18:00<br>Sab &nbsp; 10:00 – 18:00</p>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-label">Per i Rivenditori</div>
+            <p>Contattaci per listini, condizioni e disponibilità di prodotto.</p>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="reveal delay-1">
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="f5e52835-49c0-42bb-b066-ba8b397bc527">
+            <input type="hidden" name="subject" value="Nuovo messaggio — Il Fenicio Gin">
+            <input type="hidden" name="redirect" value="https://ilfeniciogin.it/contatti.html">
+            <input type="checkbox" name="botcheck" style="display:none">
+            <div class="contact-form-name-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+              </div>
+              <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="la.tua@email.it" required>
+            </div>
+            <div class="form-group">
+              <label for="tipo">Sei un</label>
+              <select id="tipo" name="tipo">
+                <option value="">Seleziona...</option>
+                <option value="appassionato">Appassionato</option>
+                <option value="bartender">Bartender</option>
+                <option value="rivenditore">Rivenditore</option>
+                <option value="ristoratore">Ristoratore</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+            </div>
+            <p style="font-size:0.75rem;margin-bottom:1.5rem;max-width:none">
+              Inviando questo modulo accetti la nostra <a href="privacy.html" style="color:var(--gold);text-decoration:underline">Privacy Policy</a>.
+            </p>
+            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
+              Invia Messaggio &nbsp;◆
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">Il Fenicio <span>No Comparison</span></div>
+          <p>Un gin che porta l'artigianalità italiana al bicchiere di tutti.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="il-gin.html">Il Fenicio</a></li>
+            <li><a href="perche-noi.html">Perché Noi</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legale</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="termini.html">Termini e Condizioni</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Il Fenicio S.r.l. — Via del Commercio 44, 24058 Romano di Lombardia (BG) — P.IVA 04932350160 — REA BG-500115</p>
+        <span class="age-badge">◆ Vietato ai minori di 18 anni ◆</span>
+        <p>L'abuso di alcol è dannoso per la salute.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    (function(){
+      var oldForm = document.querySelector('.contact-form');
+      if(!oldForm) return;
+      var newForm = oldForm.cloneNode(true);
+      oldForm.parentNode.replaceChild(newForm, oldForm);
+      newForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+        var btn = newForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Invio in corso...';
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        var data = new FormData(newForm);
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body:data});
+          var json = await res.json();
+          if(json.success){
+            btn.textContent = 'Messaggio inviato ◆';
+          } else {
+            btn.textContent = 'Errore, riprova';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        } catch(err) {
+          btn.textContent = 'Errore, riprova';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      });
+    })();
+  </script>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" style="display:none">
+    <p>Utilizziamo cookie tecnici necessari al funzionamento del sito. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
+    <div class="cookie-btns">
+      <button id="cookie-accept">Accetta</button>
+      <button id="cookie-reject">Rifiuta</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(!localStorage.getItem('fenicio_cookie')){
+        document.getElementById('cookie-banner').style.display='flex';
+      }
+      document.getElementById('cookie-accept').onclick=function(){
+        localStorage.setItem('fenicio_cookie','accepted');
+        document.getElementById('cookie-banner').style.display='none';
+      };
+      document.getElementById('cookie-reject').onclick=function(){
+        localStorage.setItem('fenicio_cookie','rejected');
+        document.getElementById('cookie-banner').style.display='none';
+      };
+    })();
+  </script>
+</body>
+</html>
