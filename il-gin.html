@@ -6,6 +6,13 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
     gtag('js', new Date());
     gtag('config', 'G-PS4LVTMPPV');
   </script>
@@ -167,6 +174,7 @@
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="cookie-policy.html">Cookie Policy</a></li>
             <li><a href="termini.html">Termini e Condizioni</a></li>
+            <li><a href="note-legali.html">Note Legali</a></li>
           </ul>
         </div>
       </div>
@@ -189,11 +197,20 @@
   </div>
   <script>
     (function(){
+      function grantAnalytics(){
+        if(typeof gtag === 'function'){
+          gtag('consent','update',{'analytics_storage':'granted'});
+        }
+      }
+      if(localStorage.getItem('fenicio_cookie')==='accepted'){
+        grantAnalytics();
+      }
       if(!localStorage.getItem('fenicio_cookie')){
         document.getElementById('cookie-banner').style.display='flex';
       }
       document.getElementById('cookie-accept').onclick=function(){
         localStorage.setItem('fenicio_cookie','accepted');
+        grantAnalytics();
         document.getElementById('cookie-banner').style.display='none';
       };
       document.getElementById('cookie-reject').onclick=function(){

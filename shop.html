@@ -6,6 +6,13 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
     gtag('js', new Date());
     gtag('config', 'G-PS4LVTMPPV');
   </script>
@@ -331,9 +338,12 @@
                 <label for="wl-email">La tua email</label>
                 <input type="email" id="wl-email" name="email" placeholder="la.tua@email.it" required>
               </div>
-              <p class="cs-form-note">
-                Iscrivendoti dichiari di avere almeno 18 anni e accetti la <a href="privacy.html" style="color:var(--gold);text-decoration:underline">Privacy Policy</a>. Ti scriveremo esclusivamente per il lancio. Niente spam.
-              </p>
+              <div class="form-group">
+                <label for="wl-privacy-consent" style="display:flex;align-items:flex-start;gap:0.6rem;cursor:pointer" class="cs-form-note">
+                  <input type="checkbox" id="wl-privacy-consent" name="privacy_consent" value="accettato" required style="width:auto;margin-top:0.2rem;flex:0 0 auto">
+                  <span>Dichiaro di avere almeno 18 anni, ho letto e accetto la <a href="privacy.html" style="color:var(--gold);text-decoration:underline">Privacy Policy</a> e acconsento al trattamento dei miei dati. Ti scriveremo esclusivamente per il lancio. Niente spam.</span>
+                </label>
+              </div>
               <button type="submit" class="btn-waitlist" id="cs-submit-btn">
                 Iscriviti alla lista d'attesa &nbsp;◆
               </button>
@@ -394,6 +404,7 @@
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="cookie-policy.html">Cookie Policy</a></li>
             <li><a href="termini.html">Termini e Condizioni</a></li>
+            <li><a href="note-legali.html">Note Legali</a></li>
           </ul>
         </div>
       </div>
@@ -457,11 +468,20 @@
   </div>
   <script>
     (function(){
+      function grantAnalytics(){
+        if(typeof gtag === 'function'){
+          gtag('consent','update',{'analytics_storage':'granted'});
+        }
+      }
+      if(localStorage.getItem('fenicio_cookie')==='accepted'){
+        grantAnalytics();
+      }
       if(!localStorage.getItem('fenicio_cookie')){
         document.getElementById('cookie-banner').style.display='flex';
       }
       document.getElementById('cookie-accept').onclick=function(){
         localStorage.setItem('fenicio_cookie','accepted');
+        grantAnalytics();
         document.getElementById('cookie-banner').style.display='none';
       };
       document.getElementById('cookie-reject').onclick=function(){

@@ -6,6 +6,13 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
     gtag('js', new Date());
     gtag('config', 'G-PS4LVTMPPV');
   </script>
@@ -61,9 +68,10 @@
         </p>
 
         <h2>2. Tipologie di cookie utilizzati</h2>
-        <p>Il presente sito utilizza esclusivamente <strong style="color:var(--off-white)">cookie tecnici e di funzionalità</strong>, necessari al corretto funzionamento delle pagine. Non vengono utilizzati cookie di profilazione, cookie di terze parti o cookie pubblicitari.</p>
+        <p>Il presente sito utilizza <strong style="color:var(--off-white)">cookie tecnici e di funzionalità</strong>, necessari al corretto funzionamento delle pagine e sempre attivi, e <strong style="color:var(--off-white)">cookie analitici/statistici di terze parti (Google Analytics)</strong>, installati esclusivamente previo consenso esplicito dell'utente prestato tramite il banner cookie. Non vengono utilizzati cookie di profilazione pubblicitaria o di marketing.</p>
+        <p style="margin-top:1rem">I cookie analitici non vengono installati fino a quando l'utente non presta il consenso tramite il banner: in assenza di consenso, o in caso di rifiuto, Google Analytics resta disattivato e non traccia la navigazione. L'utente può rifiutare o revocare il consenso in qualsiasi momento (vedi sezione 4).</p>
 
-        <h3 style="color:var(--off-white); margin-top:1.5rem; font-size:1rem">Cookie tecnici (localStorage)</h3>
+        <h3 style="color:var(--off-white); margin-top:1.5rem; font-size:1rem">Cookie tecnici (localStorage) — sempre attivi</h3>
         <div style="overflow-x:auto; margin-top:1rem">
           <table style="width:100%; border-collapse:collapse; font-size:0.82rem">
             <thead>
@@ -88,9 +96,41 @@
           </table>
         </div>
 
+        <h3 style="color:var(--off-white); margin-top:2rem; font-size:1rem">Cookie analitici/statistici di terze parti — solo previo consenso</h3>
+        <p style="margin-top:0.75rem">Questi cookie sono installati da <strong style="color:var(--off-white)">Google</strong> (Google Ireland Ltd.) tramite il servizio Google Analytics e consentono di raccogliere in forma statistica informazioni sull'utilizzo del sito. Vengono installati <strong style="color:var(--off-white)">esclusivamente dopo il consenso</strong> prestato tramite il banner e possono essere rifiutati.</p>
+        <div style="overflow-x:auto; margin-top:1rem">
+          <table style="width:100%; border-collapse:collapse; font-size:0.82rem">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left; padding:0.6rem 1rem 0.6rem 0; color:var(--gold); font-weight:500">Nome</th>
+                <th style="text-align:left; padding:0.6rem 1rem; color:var(--gold); font-weight:500">Finalità</th>
+                <th style="text-align:left; padding:0.6rem 1rem; color:var(--gold); font-weight:500">Titolare</th>
+                <th style="text-align:left; padding:0.6rem 0 0.6rem 1rem; color:var(--gold); font-weight:500">Durata</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                <td style="padding:0.7rem 1rem 0.7rem 0; color:var(--off-white)">_ga</td>
+                <td style="padding:0.7rem 1rem; color:var(--muted)">Cookie statistico/analitico: distingue gli utenti univoci per l'analisi del traffico del sito</td>
+                <td style="padding:0.7rem 1rem; color:var(--muted)">Google Ireland Ltd. (terza parte)</td>
+                <td style="padding:0.7rem 0 0.7rem 1rem; color:var(--muted)">2 anni</td>
+              </tr>
+              <tr>
+                <td style="padding:0.7rem 1rem 0.7rem 0; color:var(--off-white)">_ga_&lt;ID&gt; (_ga_*)</td>
+                <td style="padding:0.7rem 1rem; color:var(--muted)">Cookie statistico/analitico: mantiene lo stato della sessione per la specifica proprietà Google Analytics</td>
+                <td style="padding:0.7rem 1rem; color:var(--muted)">Google Ireland Ltd. (terza parte)</td>
+                <td style="padding:0.7rem 0 0.7rem 1rem; color:var(--muted)">2 anni</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2>3. Servizi di terze parti</h2>
         <p>
           Il sito utilizza <strong style="color:var(--off-white)">Web3Forms</strong> per la gestione del modulo di contatto e della lista d'attesa. I dati inviati tramite il form (nome, email, messaggio) vengono trasmessi ai server di Web3Forms secondo la loro privacy policy, disponibile su <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">web3forms.com/privacy</a>.
+        </p>
+        <p style="margin-top:1rem">
+          Il sito utilizza inoltre <strong style="color:var(--off-white)">Google Analytics</strong>, servizio di analisi statistica fornito da Google Ireland Ltd., attivato esclusivamente previo consenso dell'utente. Le informazioni raccolte sono trattate secondo la privacy policy di Google, disponibile su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
         </p>
         <p style="margin-top:1rem">
           I font tipografici sono ospitati localmente e non vengono caricati da servizi esterni.
@@ -100,6 +140,7 @@
         <p>Puoi revocare il consenso o gestire le preferenze cookie in qualsiasi momento nei seguenti modi:</p>
         <ul>
           <li><strong style="color:var(--off-white)">Tramite il browser:</strong> puoi eliminare i cookie e il localStorage dalle impostazioni del tuo browser. I principali browser offrono guide dedicate: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a>, <a href="https://support.mozilla.org/it/kb/cancellare-cookie-e-dati-navigazione-firefox" target="_blank" rel="noopener">Firefox</a>, <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a>.</li>
+          <li><strong style="color:var(--off-white)">Tramite il banner cookie:</strong> i cookie analitici di Google Analytics vengono installati solo se accetti tramite il banner. Puoi rifiutarli al primo accesso o revocare il consenso successivamente cancellando i dati di navigazione del sito: il banner riapparirà e potrai modificare la tua scelta.</li>
           <li><strong style="color:var(--off-white)">Reimpostando le preferenze:</strong> cancellando i dati di navigazione del sito, il banner cookie riapparirà alla visita successiva.</li>
         </ul>
 
@@ -147,6 +188,7 @@
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="cookie-policy.html">Cookie Policy</a></li>
             <li><a href="termini.html">Termini e Condizioni</a></li>
+            <li><a href="note-legali.html">Note Legali</a></li>
           </ul>
         </div>
       </div>
@@ -169,11 +211,20 @@
   <script src="js/main.js"></script>
   <script>
     (function(){
+      function grantAnalytics(){
+        if(typeof gtag === 'function'){
+          gtag('consent','update',{'analytics_storage':'granted'});
+        }
+      }
+      if(localStorage.getItem('fenicio_cookie')==='accepted'){
+        grantAnalytics();
+      }
       if(!localStorage.getItem('fenicio_cookie')){
         document.getElementById('cookie-banner').style.display='flex';
       }
       document.getElementById('cookie-accept').onclick=function(){
         localStorage.setItem('fenicio_cookie','accepted');
+        grantAnalytics();
         document.getElementById('cookie-banner').style.display='none';
       };
       document.getElementById('cookie-reject').onclick=function(){
