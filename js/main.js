@@ -89,7 +89,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 })();
 
 /* ── PARALLAX BOTTLE ── */
-const bottleImg = document.getElementById('hero-bottle');
+const bottleImg = document.querySelector('.hero-bottle');
 if (bottleImg) {
   window.addEventListener('scroll', () => {
     bottleImg.style.transform = `translateY(${window.scrollY * 0.06}px)`;
