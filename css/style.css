@@ -1310,7 +1310,7 @@ footer::before {
   pointer-events: none;
 }
 .age-gate-logo {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 300;
   color: var(--white);
@@ -1319,7 +1319,7 @@ footer::before {
 }
 .age-gate-logo span {
   display: block;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.6rem;
   letter-spacing: 0.35em;
   color: var(--gold);
@@ -1333,14 +1333,14 @@ footer::before {
   opacity: 0.5;
 }
 .age-gate-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 300;
   color: var(--white);
   margin-bottom: 0.75rem;
 }
 .age-gate-sub {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   color: var(--muted);

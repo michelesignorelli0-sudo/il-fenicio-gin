@@ -1,14 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PS4LVTMPPV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PS4LVTMPPV');
-  </script>
+  <!-- Google Analytics (GA4) caricato dinamicamente da js/main.js solo previo consenso cookie (GDPR) -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il Gin — Il Fenicio</title>
@@ -87,7 +80,7 @@
           </div>
           <div class="botanica-item reveal delay-1">
             <h4>Coriandolo</h4>
-            <p>Note speziate e leggermente agrumato, porta profondità e complessità al profilo aromatico.</p>
+            <p>Note speziate e leggermente agrumate, portano profondità e complessità al profilo aromatico.</p>
           </div>
           <div class="botanica-item reveal delay-2">
             <h4>Scorza di Limone</h4>
@@ -195,6 +188,7 @@
       document.getElementById('cookie-accept').onclick=function(){
         localStorage.setItem('fenicio_cookie','accepted');
         document.getElementById('cookie-banner').style.display='none';
+        if(window.fenicioLoadAnalytics) window.fenicioLoadAnalytics();
       };
       document.getElementById('cookie-reject').onclick=function(){
         localStorage.setItem('fenicio_cookie','rejected');

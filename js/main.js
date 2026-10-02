@@ -1,3 +1,29 @@
+/* ── GOOGLE ANALYTICS (GA4) — caricamento subordinato al consenso cookie ── */
+// GA4 NON parte finché l'utente non ha accettato i cookie (chiave localStorage
+// `fenicio_cookie` === 'accepted'). Prima del consenso non viene scaricato
+// gtag.js né impostato alcun cookie _ga, in conformità al GDPR / Garante Privacy.
+const GA_MEASUREMENT_ID = 'G-PS4LVTMPPV';
+function fenicioLoadAnalytics() {
+  if (window.__fenicioGaLoaded) return;
+  if (localStorage.getItem('fenicio_cookie') !== 'accepted') return;
+  window.__fenicioGaLoaded = true;
+
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID);
+}
+// Esposta per il banner cookie (viene richiamata al click su "Accetta").
+window.fenicioLoadAnalytics = fenicioLoadAnalytics;
+// Se il consenso è già stato dato in una visita precedente, carica subito GA4.
+fenicioLoadAnalytics();
+
 /* ── AGE GATE ── */
 // Presente su tutte le pagine: se la pagina non ha il markup, lo crea qui.
 if (!document.getElementById('age-gate') && !localStorage.getItem('fenicio_age_ok')) {
