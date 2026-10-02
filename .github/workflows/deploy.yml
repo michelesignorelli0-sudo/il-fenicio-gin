@@ -22,3 +22,6 @@ jobs:
             **/.git*/**
             **/node_modules/**
             .github/**
+            reports/**
+            social/**
+            README.md
