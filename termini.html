@@ -43,7 +43,17 @@
     <div class="container">
       <div class="privacy-content reveal">
 
-        <p>Ultimo aggiornamento: Settembre 2026</p>
+        <p>Ultimo aggiornamento: Ottobre 2026</p>
+
+        <div style="margin:1.5rem 0; padding:1.5rem 2rem; border-left:3px solid var(--gold); background:rgba(232,168,0,0.05)" role="note">
+          <p style="font-size:0.78rem; color:var(--off-white); font-weight:500; letter-spacing:0.05em; max-width:none; margin-bottom:0.5rem">
+            ◆ &nbsp; Avviso: vendita online non ancora attiva
+          </p>
+          <p style="font-size:0.82rem; color:var(--muted); max-width:none; margin:0">
+            La vendita online non è attualmente attiva. Lo shop è in fase di preparazione (<strong style="color:var(--off-white)">"In Arrivo"</strong>). Le presenti Condizioni di Vendita si applicheranno a partire dall'attivazione della vendita online tramite il sito. Per essere avvisato al lancio puoi iscriverti alla lista d'attesa nella pagina <a href="shop.html">Shop</a>.
+          </p>
+        </div>
+
         <p style="margin-top:1rem">
           I presenti Termini e Condizioni di Vendita (di seguito "T&C") regolano l'acquisto di prodotti tramite il sito web <strong style="color:var(--off-white)">ilfeniciogin.it</strong>, gestito da <strong style="color:var(--off-white)">Il Fenicio S.r.l.</strong>, in conformità al D.Lgs. 206/2005 (Codice del Consumo) e al D.Lgs. 70/2003 (E-Commerce).
         </p>
@@ -64,7 +74,7 @@
           I prezzi esposti sono in Euro (€) e si intendono <strong style="color:var(--off-white)">IVA inclusa al 22%</strong>. Il Fenicio S.r.l. si riserva il diritto di modificare i prezzi in qualsiasi momento, senza preavviso. Il prezzo applicato all'ordine è quello indicato al momento della conferma dell'acquisto.
         </p>
         <p style="margin-top:1rem">
-          Le spese di spedizione, se applicabili, vengono indicate separatamente prima del completamento dell'ordine. La spedizione è sempre gratuita.
+          La spedizione è sempre gratuita su tutto il territorio nazionale. Non sono previste spese di spedizione a carico del cliente per gli acquisti.
         </p>
 
         <h2>3. Ordini e pagamento</h2>
@@ -100,7 +110,7 @@
           Il prodotto deve essere restituito entro 14 giorni dalla comunicazione del recesso, <strong style="color:var(--off-white)">integro, nella confezione originale, non aperto e non danneggiato</strong>. Le spese di restituzione sono a carico del cliente.
         </p>
         <p style="margin-top:1rem">
-          Il rimborso del prezzo pagato (escluse le spese di spedizione originali) verrà effettuato entro 14 giorni dalla ricezione del prodotto reso, tramite lo stesso metodo di pagamento utilizzato.
+          Il rimborso comprenderà l'intero importo pagato per il prodotto e verrà effettuato entro 14 giorni dalla ricezione del prodotto reso, tramite lo stesso metodo di pagamento utilizzato. Le spese dirette di restituzione del bene sono a carico del Cliente, salvo diversa indicazione.
         </p>
 
         <div style="margin:2rem 0; padding:1.5rem 2rem; border-left:3px solid var(--gold); background:rgba(232,168,0,0.05)">
@@ -226,27 +236,39 @@
 
   <!-- COOKIE BANNER -->
   <div id="cookie-banner" style="display:none">
-    <p>Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo tuo consenso, cookie analitici di Google Analytics per statistiche aggregate e anonime sul traffico. Con "Accetta" acconsenti ai cookie tecnici e analitici; con "Rifiuta" restano attivi solo i cookie tecnici. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
-    <div class="cookie-btns">
-      <button id="cookie-accept">Accetta</button>
-      <button id="cookie-reject">Rifiuta</button>
+    <div class="cookie-banner-main">
+      <p>Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo tuo consenso, cookie analitici di Google Analytics per statistiche aggregate e anonime sul traffico. Puoi accettare tutti i cookie, consentire solo quelli necessari oppure gestire le tue preferenze. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      <div class="cookie-btns">
+        <button id="cookie-accept">Accetta tutti</button>
+        <button id="cookie-reject">Solo necessari</button>
+        <button id="cookie-manage" type="button">Gestisci preferenze</button>
+      </div>
+    </div>
+    <div id="cookie-prefs" class="cookie-prefs" style="display:none">
+      <div class="cookie-pref-row">
+        <div>
+          <span class="cookie-pref-title">Cookie necessari</span>
+          <span class="cookie-pref-desc">Essenziali al funzionamento del sito. Sempre attivi.</span>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-pref-always">Sempre attivi</span>
+        </label>
+      </div>
+      <div class="cookie-pref-row">
+        <div>
+          <span class="cookie-pref-title">Cookie analitici (Google Analytics)</span>
+          <span class="cookie-pref-desc">Statistiche aggregate e anonime sul traffico del sito.</span>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookie-analytics-toggle">
+          <span>Attiva</span>
+        </label>
+      </div>
+      <div class="cookie-btns">
+        <button id="cookie-save" type="button">Salva preferenze</button>
+      </div>
     </div>
   </div>
-  <script>
-    (function(){
-      if(!localStorage.getItem('fenicio_cookie')){
-        document.getElementById('cookie-banner').style.display='flex';
-      }
-      document.getElementById('cookie-accept').onclick=function(){
-        localStorage.setItem('fenicio_cookie','accepted');
-        document.getElementById('cookie-banner').style.display='none';
-        if(window.fenicioLoadAnalytics) window.fenicioLoadAnalytics();
-      };
-      document.getElementById('cookie-reject').onclick=function(){
-        localStorage.setItem('fenicio_cookie','rejected');
-        document.getElementById('cookie-banner').style.display='none';
-      };
-    })();
-  </script>
 </body>
 </html>
