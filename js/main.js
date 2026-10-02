@@ -24,6 +24,64 @@ window.fenicioLoadAnalytics = fenicioLoadAnalytics;
 // Se il consenso è già stato dato in una visita precedente, carica subito GA4.
 fenicioLoadAnalytics();
 
+/* ── COOKIE BANNER — consenso granulare (necessari vs analitici) ── */
+// Unica categoria non essenziale: analitici (GA4). La scelta è salvata in
+// localStorage `fenicio_cookie` con i valori 'accepted' (analitici attivi) o
+// 'rejected' (solo necessari), così da restare compatibile con fenicioLoadAnalytics().
+function fenicioInitCookieBanner() {
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  const panel     = document.getElementById('cookie-prefs');
+  const toggle    = document.getElementById('cookie-analytics-toggle');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const rejectBtn = document.getElementById('cookie-reject');
+  const manageBtn = document.getElementById('cookie-manage');
+  const saveBtn   = document.getElementById('cookie-save');
+
+  function isAnalyticsOn() { return localStorage.getItem('fenicio_cookie') === 'accepted'; }
+  function syncToggle() { if (toggle) toggle.checked = isAnalyticsOn(); }
+  function hideBanner() { banner.style.display = 'none'; }
+  function showBanner() { banner.style.display = 'flex'; }
+
+  // Mostra il banner solo se l'utente non ha ancora effettuato una scelta.
+  if (!localStorage.getItem('fenicio_cookie')) showBanner();
+
+  // Applica la scelta: analitici ON -> 'accepted' e caricamento GA4;
+  // analitici OFF -> 'rejected' e nessun caricamento di GA4.
+  function applyChoice(analyticsOn) {
+    if (analyticsOn) {
+      localStorage.setItem('fenicio_cookie', 'accepted');
+      if (window.fenicioLoadAnalytics) window.fenicioLoadAnalytics();
+    } else {
+      localStorage.setItem('fenicio_cookie', 'rejected');
+    }
+    hideBanner();
+  }
+
+  if (acceptBtn) acceptBtn.onclick = function () { applyChoice(true); };   // Accetta tutti
+  if (rejectBtn) rejectBtn.onclick = function () { applyChoice(false); };  // Solo necessari
+  if (manageBtn) manageBtn.onclick = function () {
+    if (!panel) return;
+    const open = panel.style.display === 'block';
+    panel.style.display = open ? 'none' : 'block';
+    if (!open) syncToggle();
+  };
+  if (saveBtn) saveBtn.onclick = function () { applyChoice(!!(toggle && toggle.checked)); };
+
+  // Richiamabile da altre pagine (es. Cookie Policy) per riaprire le preferenze.
+  window.fenicioOpenCookiePrefs = function () {
+    syncToggle();
+    if (panel) panel.style.display = 'block';
+    showBanner();
+  };
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', fenicioInitCookieBanner);
+} else {
+  fenicioInitCookieBanner();
+}
+
 /* ── AGE GATE ── */
 // Presente su tutte le pagine: se la pagina non ha il markup, lo crea qui.
 if (!document.getElementById('age-gate') && !localStorage.getItem('fenicio_age_ok')) {

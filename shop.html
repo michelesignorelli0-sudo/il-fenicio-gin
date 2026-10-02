@@ -442,27 +442,39 @@
 
   <!-- COOKIE BANNER -->
   <div id="cookie-banner" style="display:none">
-    <p>Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo tuo consenso, cookie analitici di Google Analytics per statistiche aggregate e anonime sul traffico. Con "Accetta" acconsenti ai cookie tecnici e analitici; con "Rifiuta" restano attivi solo i cookie tecnici. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
-    <div class="cookie-btns">
-      <button id="cookie-accept">Accetta</button>
-      <button id="cookie-reject">Rifiuta</button>
+    <div class="cookie-banner-main">
+      <p>Utilizziamo cookie tecnici necessari al funzionamento del sito e, previo tuo consenso, cookie analitici di Google Analytics per statistiche aggregate e anonime sul traffico. Puoi accettare tutti i cookie, consentire solo quelli necessari oppure gestire le tue preferenze. Per maggiori informazioni consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      <div class="cookie-btns">
+        <button id="cookie-accept">Accetta tutti</button>
+        <button id="cookie-reject">Solo necessari</button>
+        <button id="cookie-manage" type="button">Gestisci preferenze</button>
+      </div>
+    </div>
+    <div id="cookie-prefs" class="cookie-prefs" style="display:none">
+      <div class="cookie-pref-row">
+        <div>
+          <span class="cookie-pref-title">Cookie necessari</span>
+          <span class="cookie-pref-desc">Essenziali al funzionamento del sito. Sempre attivi.</span>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-pref-always">Sempre attivi</span>
+        </label>
+      </div>
+      <div class="cookie-pref-row">
+        <div>
+          <span class="cookie-pref-title">Cookie analitici (Google Analytics)</span>
+          <span class="cookie-pref-desc">Statistiche aggregate e anonime sul traffico del sito.</span>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookie-analytics-toggle">
+          <span>Attiva</span>
+        </label>
+      </div>
+      <div class="cookie-btns">
+        <button id="cookie-save" type="button">Salva preferenze</button>
+      </div>
     </div>
   </div>
-  <script>
-    (function(){
-      if(!localStorage.getItem('fenicio_cookie')){
-        document.getElementById('cookie-banner').style.display='flex';
-      }
-      document.getElementById('cookie-accept').onclick=function(){
-        localStorage.setItem('fenicio_cookie','accepted');
-        document.getElementById('cookie-banner').style.display='none';
-        if(window.fenicioLoadAnalytics) window.fenicioLoadAnalytics();
-      };
-      document.getElementById('cookie-reject').onclick=function(){
-        localStorage.setItem('fenicio_cookie','rejected');
-        document.getElementById('cookie-banner').style.display='none';
-      };
-    })();
-  </script>
 </body>
 </html>
