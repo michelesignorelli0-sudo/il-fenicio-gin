@@ -228,14 +228,23 @@
   <script>
     (function(){
       var img = document.querySelector('.hero-parallax');
+      var overlay = document.querySelector('.hero-photo-overlay');
       if (!img) return;
       var ticking = false;
+      var heroH = window.innerHeight;
       window.addEventListener('scroll', function(){
         if (!ticking) {
           requestAnimationFrame(function(){
             var scrollY = window.scrollY;
-            var speed = 0.35;
-            img.style.transform = 'translateY(' + (scrollY * speed) + 'px) scale(1.08)';
+            if (scrollY > heroH) { ticking = false; return; }
+            var progress = scrollY / heroH;
+            var translateY = scrollY * 0.55;
+            var scale = 1.15 - (progress * 0.12);
+            img.style.transform = 'translateY(' + translateY + 'px) scale(' + scale + ')';
+            if (overlay) {
+              var opacity = 0.3 + progress * 0.5;
+              overlay.style.opacity = Math.min(opacity, 0.85);
+            }
             ticking = false;
           });
           ticking = true;

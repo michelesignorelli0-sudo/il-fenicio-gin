@@ -553,8 +553,8 @@ section { padding: 8rem 0; }
 }
 .hero-parallax {
   will-change: transform;
-  transform: translateY(0px) scale(1.08);
-  transition: transform 0.1s linear;
+  transform: translateY(0px) scale(1.15);
+  transform-origin: center center;
 }
 .hero-photo-img {
   width: 100%;
