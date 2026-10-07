@@ -44,7 +44,7 @@
   <section class="hero hero-photo">
     <canvas id="particles"></canvas>
     <div class="hero-photo-bg">
-      <img src="img/licio.jpeg" alt="Il Fenicio Gin" class="hero-photo-img">
+      <img src="img/hero.jpg" alt="Il Fenicio Gin" class="hero-photo-img hero-parallax">
       <div class="hero-photo-overlay"></div>
     </div>
 
@@ -223,6 +223,24 @@
         localStorage.setItem('fenicio_cookie','rejected');
         document.getElementById('cookie-banner').style.display='none';
       };
+    })();
+  </script>
+  <script>
+    (function(){
+      var img = document.querySelector('.hero-parallax');
+      if (!img) return;
+      var ticking = false;
+      window.addEventListener('scroll', function(){
+        if (!ticking) {
+          requestAnimationFrame(function(){
+            var scrollY = window.scrollY;
+            var speed = 0.35;
+            img.style.transform = 'translateY(' + (scrollY * speed) + 'px) scale(1.08)';
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, {passive: true});
     })();
   </script>
 </body>

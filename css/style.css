@@ -551,10 +551,15 @@ section { padding: 8rem 0; }
   inset: 0;
   z-index: 0;
 }
+.hero-parallax {
+  will-change: transform;
+  transform: translateY(0px) scale(1.08);
+  transition: transform 0.1s linear;
+}
 .hero-photo-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   filter: contrast(1.05) saturate(1.08) brightness(1.02);
